@@ -1,4 +1,4 @@
-package com.example.cashtest.entities;
+package com.example.cashtest.models;
 
 
 /**

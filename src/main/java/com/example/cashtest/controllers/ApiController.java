@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * UsuarioController
+ * ApiController
  */
 @RestController
 public class ApiController {

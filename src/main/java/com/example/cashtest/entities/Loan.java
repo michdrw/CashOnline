@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -20,18 +19,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Entity
 @Table(name = "loan")
 
-@NamedNativeQuery(name = "Loan.findLoans", query ="SELECT * FROM loan LIMIT ?,?")
-@NamedNativeQuery(name = "Loan.findLoansByUserId", query ="SELECT * FROM loan WHERE user_id = ? LIMIT ?,?")
-@NamedNativeQuery(name = "Loan.countLoansByUserId", query = "SELECT count(*) FROM loan WHERE user_id = ? ")
 public class Loan {
     
     @Id
-    @JsonProperty(value = "loan_id")
+    @JsonProperty(value = "id")
     @Column(name = "loan_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int loanId;
     private double total;
-
+    
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")

@@ -16,7 +16,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Usuario
+ * User
  */
 
 @Entity
@@ -36,6 +36,7 @@ public class User {
     private String lastName;
     private String email;
 
+    
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Loan> loans = new ArrayList<Loan>();
 

@@ -3,7 +3,7 @@ package com.example.cashtest.models.responses;
 import java.util.List;
 
 import com.example.cashtest.entities.Loan;
-import com.example.cashtest.entities.LoanInfo;
+import com.example.cashtest.models.LoanInfo;
 
 /**
  * LoanSummaryResponse
