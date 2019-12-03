@@ -8,7 +8,7 @@ You'll need to have installed:
 * Postman
 
 ## Installation
-# Clone
+### Clone
 Clone this repo to your local machine using https://github.com/michdrw/CashOnline.git
 
 ## Excecution
