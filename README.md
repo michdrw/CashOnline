@@ -11,7 +11,7 @@ You'll need to have installed:
 ### Clone
 Clone this repo to your local machine using https://github.com/michdrw/CashOnline.git
 
-## Excecution
+## Execution
 You can test the following links on postman:
 * **POST USERS**, using POST https://limitless-basin-63299.herokuapp.com/users
 * **POST LOANS**, using POST https://limitless-basin-63299.herokuapp.com/users/{id}/loans
