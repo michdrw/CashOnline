@@ -50,4 +50,34 @@ public class UserService {
         this.userRepository.delete(u);
 
     }
+
+    public enum UserValidationType {
+        USER_OK, 
+        USER_DUPLICATED, 
+        USER_INVALID_DATA
+    }
+
+    public UserValidationType verifyUser(User user) {
+        if (user.getFirstName() == null)
+            return UserValidationType.USER_INVALID_DATA;
+
+        if (user.getLastName() == null)
+            return UserValidationType.USER_INVALID_DATA;
+
+        if (user.getEmail() == null)
+            return UserValidationType.USER_INVALID_DATA;
+
+        User u = userRepository.findByEmail(user.getEmail());
+        if (u != null) {
+            if (user.getUserId() != null) {
+                if ((user.getUserId().toString()).equals(u.getUserId().toString())) {
+                    return UserValidationType.USER_OK;
+                } else {
+                    return UserValidationType.USER_DUPLICATED;
+                }
+            } else
+                return UserValidationType.USER_DUPLICATED;
+        }
+        return UserValidationType.USER_OK;
+    }
 }

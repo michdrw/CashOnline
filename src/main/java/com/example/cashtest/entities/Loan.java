@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Loan {
     
+    
     @Id
     @JsonProperty(value = "id")
     @Column(name = "loan_id")

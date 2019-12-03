@@ -35,25 +35,34 @@ public class LoanService {
             save(p);
             u.addLoan(p);
         }
-        
+
     }
 
-    public long countLoans(){
+    public long countLoans() {
         return loanRepository.count();
     }
 
-    public long countLoansByUserId(Integer userId){
+    public long countLoansByUserId(Integer userId) {
         return loanRepository.countLoansByUserId(userId);
     }
 
-    public List<Loan> getLoans(int size, int offset)
-    {
+    public List<Loan> getLoans(int size, int offset) {
         return loanRepository.findLoans(offset, size);
     }
 
-    public List<Loan> getLoansWUserId(int size, int offset, int userId)
-    {
+    public List<Loan> getLoansWUserId(int size, int offset, int userId) {
         return loanRepository.findLoansByUserId(userId, offset, size);
     }
 
+    public enum LoanValidationType {
+        LOAN_OK, LOAN_INVALID_DATA
+    }
+
+    public LoanValidationType verifyLoan(Loan loan) {
+        if (loan.getTotal() <= 0) {
+            return LoanValidationType.LOAN_INVALID_DATA;
+        }
+        return LoanValidationType.LOAN_OK;
+
+    }
 }

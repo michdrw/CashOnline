@@ -27,7 +27,7 @@ public class User {
     @JsonProperty(value = "user_id")
     @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
+    private Integer userId;
     @JsonProperty(value = "first_name")
     @Column(name = "first_name")
     private String firstName;
@@ -43,11 +43,11 @@ public class User {
     public User() {
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int id) {
+    public void setUserId(Integer id) {
         this.userId = id;
     }
 
