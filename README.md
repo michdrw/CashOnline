@@ -2,7 +2,7 @@
 API Rest proyect developed for Cash Online as a challenge.
 
 ## Prerequisites
-You'll need to have pre installed:
+You'll need to have installed:
 * Visual Studio Code
 * MySQL
 * Postman
