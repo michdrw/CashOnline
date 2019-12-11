@@ -81,7 +81,7 @@ public class ApiController {
         return ResponseEntity.ok(u);
     }
 
-    @GetMapping("/loans?page={page}&size={size}")
+    @GetMapping("/loans")
     public LoanSummaryResponse getLoans(@RequestParam(value = "size", required = true) Integer size, @RequestParam(value = "page", required = true) Integer pagination, @RequestParam(value = "user_id", required = false) Integer userId)  {
         
 
